@@ -1,3 +1,19 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    // "react-app",
+    "next/core-web-vitals"
+
+    // "eslint:recommended"
+  ]
+  // "rules": {
+  //   "no-unexpected-multiline": "error",
+  //   "no-extra-semi": "error"
+  // }
+  // "settings": {
+  //   "import/resolver": {
+  //     "node": {
+  //       "extensions": [".js", ".jsx", ".ts", ".tsx"]
+  //     }
+  //   }
+  // }
 }

@@ -2,42 +2,15 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import Button from 'react-bootstrap/Button'
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import styles from '../styles/Home.module.css'
-import Web3 from 'web3'
-import { useEffect } from 'react'
 
-// export interface hi {
-//   Accounts: Array;
-// }
+import Form from "react-bootstrap/Form";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import LoginButton from '../components/LoginButton'
+// import LoginButton from '@components/LoginButton'
 
 const Home: NextPage = () => {
-  
-  const loadBlockchainData = async () => {
-
-    const web3 = new Web3(Web3.givenProvider || "http://localhost:3000")
-    const network = await web3.eth.net.getNetworkType()
-    console.log("network:", network);
-
-    const account = web3.eth;
-
-    console.log(account)
-
-
-  }
-
-  const onHiClick = () => {
-    console.log("clicked hi button");
-    loadBlockchainData();
-  }
-
-  // useEffect(() => {
-  //   loadBlockchainData()
-  // });
-
-
   return (
     <div className={styles.container}>
       <Head>
@@ -48,15 +21,31 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://nextjs.org">Dongle Space!</a>
         </h1>
-        <Button variant="primary" onClick={onHiClick} >hihi</Button>
-        <p className={styles.description}>
-          Get started by editing
-          <code className={styles.code}>pages/index.tsx</code>
-          <br/> Your account: 
-        </p>
 
+        <LoginButton/>
+        {' '}
+        {' '}
+        <p>check my purchase with... </p>
+        <Form>
+  {['checkbox', 'radio'].map((type) => (
+    <div key={`default-${type}`} className="mb-3">
+      <Form.Check 
+        type={type}
+        id={`default-${type}`}
+        label={`default ${type}`}
+      />
+
+      <Form.Check
+        disabled
+        type={type}
+        label={`disabled ${type}`}
+        id={`disabled-default-${type}`}
+      />
+    </div>
+  ))}
+</Form>
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>

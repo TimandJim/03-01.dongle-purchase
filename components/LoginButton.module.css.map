@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EAEJ,MAAM,EAAE,IACZ;CAAC",
+    "sources": [
+        "LoginButton.module.scss"
+    ],
+    "names": [],
+    "file": "LoginButton.module.css"
+}

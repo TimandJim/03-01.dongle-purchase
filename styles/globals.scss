@@ -6,9 +6,15 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-html body {
+html {
+  // justify-content: center;
+  // margin: auto;
+  body {
     color: white;
     background-color: black;
+    width: 80vw;
+    margin: auto;
+  }
 }
 
 a {

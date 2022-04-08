@@ -1,5 +1,4 @@
 import Button from "react-bootstrap/Button";
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./LoginButton.module.scss";
 import { useState } from "react";
 declare global {
@@ -10,11 +9,16 @@ declare global {
 }
 
 export interface LoginButtonProps {
+  readonly address: string;
   readonly setAddress: (address: string) => void;
+  readonly setNetwork?: (network: string) => void;
+  readonly disabled?: boolean;
 }
 
 const LoginButton = (props: LoginButtonProps): JSX.Element => {
-  const { setAddress } = props;
+  const { setAddress, disabled, address } = props;
+  const disabledTrueLabel = <span>✅ You're logged into Metamask 🥳<br/> address: {address} </span>
+  const disabledFalseLabel = "2. Login with Metamask"
 
   const onClick = async () => {
     if (typeof window.ethereum !== "undefined") {
@@ -22,13 +26,18 @@ const LoginButton = (props: LoginButtonProps): JSX.Element => {
         method: "eth_requestAccounts",
       });
       const account = accounts[0];
-      return setAddress(account);
+
+      
+      return
+        setAddress(account);
+        // setNetwork("")
+
     }
   };
 
   return (
-    <Button variant="light" onClick={onClick} className={styles.button}>
-      Check my purchase with Metamask
+    <Button variant="light" onClick={onClick} className={styles.button} disabled={disabled}>
+      {disabled ? disabledTrueLabel : disabledFalseLabel}
     </Button>
   );
 };

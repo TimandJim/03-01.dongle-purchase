@@ -10,12 +10,12 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@metamask/onboarding": "^1.0.1",
     "bootstrap": "^5.1.3",
     "next": "12.1.4",
     "react": "18.0.0",
     "react-bootstrap": "^2.2.3",
     "react-dom": "18.0.0",
-    "sass": "^1.50.0",
     "web3": "^1.7.1"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
     "@types/react-dom": "17.0.14",
     "eslint": "^8.0.0",
     "eslint-config-next": "12.1.4",
+    "sass": "^1.50.0",
     "typescript": "4.6.3"
   }
 }

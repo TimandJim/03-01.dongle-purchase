@@ -76,12 +76,12 @@ const IndexPage = (Props: IndexPageProps) => {
 
       <main className={styles.main}>
         <div className={styles.logoBox}>
-          <Image
+          <img
             src="/dongle_logo_word.png"
             alt="dongle logo"
             width={1405}
             height={401}
-          ></Image>
+          ></img>
         </div>
         <h1 className={styles.title}>Be ready to enter Dongle Spaces</h1>
         <InstallMetamaskButton disabled={isMetamaskInstalled} />

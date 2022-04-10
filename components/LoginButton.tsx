@@ -17,7 +17,7 @@ export interface LoginButtonProps {
 
 const LoginButton = (props: LoginButtonProps): JSX.Element => {
   const { setAddress, disabled, address } = props;
-  const disabledTrueLabel = <span>✅ You're logged into Metamask 🥳<br/> address: {address} </span>
+  const disabledTrueLabel = <span>{"✅ You're logged into Metamask 🥳"}<br/> address: {address} </span>
   const disabledFalseLabel = "2. Login with Metamask"
 
   const onClick = async () => {

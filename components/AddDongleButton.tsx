@@ -40,7 +40,7 @@ const AddDongleButton = ():JSX.Element => {
 
   return (
 <div className={styles.div}>
-  <p>Don't see your Dongles in Metamask? </p>
+  <p>{"Don't see your Dongles in Metamask?"} </p>
     <Button variant="light" onClick={onClick} className={styles.button}>
     Add Dongle token to metamask 😎
     </Button>

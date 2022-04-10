@@ -12,10 +12,7 @@ import AddPolygonButton from "../components/AddPolygonButton";
 import CheckWithMetamask from "../components/CheckWithMetamask";
 
 // constants
-import {
-  polygonChainIdString,
-
-} from "../constants/eth.constant";
+import { polygonChainIdString } from "../constants/eth.constant";
 
 import Web3 from "web3";
 
@@ -56,15 +53,24 @@ const IndexPage = (Props: IndexPageProps) => {
     };
     window.ethereum !== undefined && checkMetamaskInfo();
 
+
+  }, []);
+
+  useEffect(() => {
     //Detect account and network change
-    window.ethereum.on("accountsChanged", (accounts?: any) => {
-      setAddress(accounts[0]);
-    });
+    address !== "" &&
+      window.ethereum.on("accountsChanged", (accounts?: any) => {
+        setAddress(accounts[0]);
+      });
+  }, [address]);
+
+  useEffect(() => {
     // TODO: Remove listener if needed
-    window.ethereum.on("chainChanged", (_chainId: string) => {
+    network !== "" && window.ethereum.on("chainChanged", (_chainId: string) => {
       window.location.reload();
     });
-  }, []);
+  }, [network])
+  
 
   return (
     <div className={styles.container}>
